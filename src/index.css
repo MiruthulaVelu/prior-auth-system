@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #f8fafc;
+    --text-main: #0f172a;
+    --card-bg: #ffffff;
+    --card-border: #e2e8f0;
+  }
+
+  html.dark {
+    --bg-main: #090d16;
+    --text-main: #ffffff;
+    --card-bg: #111827;
+    --card-border: #1f2937;
+    color-scheme: dark;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+/* Glass & Card Utilities */
+.glass-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+}
+
+.glass-card-interactive {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-interactive:hover {
+  border-color: #0d9488;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -5px rgba(13, 148, 136, 0.2);
+}
+
+/* ==========================================================================
+   NIGHT THEME (DARK MODE) COMPREHENSIVE HIGH-CONTRAST OVERRIDES
+   ========================================================================== */
+
+/* 1. Body & App Container Backgrounds */
+html.dark body,
+html.dark .min-h-screen {
+  background-color: #090d16 !important;
+  color: #ffffff !important;
+}
+
+/* 2. Hero Banners & Gradient Cards Overrides */
+html.dark .bg-gradient-to-r,
+html.dark .bg-gradient-to-tr,
+html.dark .bg-gradient-to-br,
+html.dark .bg-gradient-to-b {
+  background: linear-gradient(135deg, #111827 0%, #1e293b 50%, #0f172a 100%) !important;
+  border-color: #1f2937 !important;
+}
+
+/* 3. All Light/White Background Cards convert to Dark Slate in Night Theme */
+html.dark .bg-white,
+html.dark .bg-slate-50,
+html.dark .bg-slate-50\/80,
+html.dark .bg-slate-50\/60,
+html.dark .bg-slate-100,
+html.dark .bg-slate-200,
+html.dark .bg-teal-50,
+html.dark .bg-teal-50\/80,
+html.dark .bg-teal-50\/60,
+html.dark .bg-emerald-50,
+html.dark .bg-emerald-50\/80,
+html.dark .bg-emerald-50\/60,
+html.dark .bg-amber-50,
+html.dark .bg-amber-50\/80,
+html.dark .bg-amber-50\/60,
+html.dark .bg-rose-50,
+html.dark .bg-rose-50\/80,
+html.dark .bg-rose-50\/60,
+html.dark .bg-indigo-50 {
+  background-color: #111827 !important;
+  border-color: #1f2937 !important;
+  color: #ffffff !important;
+}
+
+/* 4. Navigation & Sub-nav Pills in Dark Mode */
+html.dark .bg-slate-100 {
+  background-color: #1f2937 !important;
+}
+
+html.dark header {
+  background-color: rgba(17, 24, 39, 0.95) !important;
+  border-color: #1f2937 !important;
+}
+
+html.dark header nav button {
+  color: #cbd5e1 !important;
+}
+
+html.dark header nav button.bg-white {
+  background-color: #0d9488 !important;
+  color: #ffffff !important;
+  border-color: #0d9488 !important;
+}
+
+html.dark footer {
+  background-color: #111827 !important;
+  border-color: #1f2937 !important;
+  color: #cbd5e1 !important;
+}
+
+/* 5. Typography & Text Colors for Dark Backgrounds */
+html.dark .text-slate-900,
+html.dark .text-slate-800,
+html.dark .text-slate-700,
+html.dark .text-emerald-900,
+html.dark .text-amber-900,
+html.dark .text-rose-900,
+html.dark .text-teal-900 {
+  color: #ffffff !important;
+}
+
+html.dark .text-slate-600,
+html.dark .text-slate-500,
+html.dark .text-emerald-800,
+html.dark .text-amber-800,
+html.dark .text-rose-800,
+html.dark .text-teal-800 {
+  color: #cbd5e1 !important;
+}
+
+html.dark .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+html.dark .text-emerald-700,
+html.dark .text-emerald-600 {
+  color: #34d399 !important;
+}
+
+html.dark .text-amber-700,
+html.dark .text-amber-600 {
+  color: #fbbf24 !important;
+}
+
+html.dark .text-rose-700,
+html.dark .text-rose-600 {
+  color: #f87171 !important;
+}
+
+html.dark .text-teal-700,
+html.dark .text-teal-600 {
+  color: #2dd4bf !important;
+}
+
+/* 6. Form Controls & Select Dropdown Options */
+html.dark input,
+html.dark select,
+html.dark textarea {
+  background-color: #1f2937 !important;
+  color: #ffffff !important;
+  border-color: #374151 !important;
+}
+
+html.dark select option {
+  background-color: #111827 !important;
+  color: #ffffff !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* 7. Tables in Dark Mode */
+html.dark table {
+  color: #ffffff !important;
+}
+
+html.dark table thead th {
+  background-color: #1f2937 !important;
+  color: #2dd4bf !important;
+  border-color: #374151 !important;
+}
+
+html.dark table tbody tr {
+  border-color: #1f2937 !important;
+}
+
+html.dark table tbody tr:hover {
+  background-color: rgba(31, 41, 55, 0.7) !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #374151;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0d9488;
+}
