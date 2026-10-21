@@ -47,8 +47,59 @@ export default function App() {
   const [requests, setRequests] = useState([]);
   const [patients, setPatients] = useState([]);
   const [payers, setPayers] = useState([]);
-  const [icd10Codes, setIcd10Codes] = useState([]);
-  const [cptCodes, setCptCodes] = useState([]);
+  const [icd10Codes, setIcd10Codes] = useState([
+    {
+      code: "M17.11",
+      description: "Primary osteoarthritis, right knee"
+    },
+    {
+      code: "M16.11",
+      description: "Unilateral primary osteoarthritis, right hip"
+    },
+    {
+      code: "S52.531A",
+      description: "Nondisplaced fracture of distal radius, right arm"
+    },
+    {
+      code: "S83.201A",
+      description: "Sprain of right knee, initial encounter"
+    },
+    {
+      code: "M54.5",
+      description: "Low back pain"
+    },
+    {
+      code: "S06.0X1A",
+      description: "Concussion without loss of consciousness, initial encounter"
+    }
+  ]);
+
+  const [cptCodes, setCptCodes] = useState([
+    {
+      code: "27447",
+      description: "Total Knee Arthroplasty (Replacement)"
+    },
+    {
+      code: "27130",
+      description: "Total Hip Arthroplasty"
+    },
+    {
+      code: "29881",
+      description: "Arthroscopy, knee, surgical"
+    },
+    {
+      code: "29888",
+      description: "Arthroscopically aided anterior cruciate ligament repair"
+    },
+    {
+      code: "25606",
+      description: "Open treatment of distal radius fracture"
+    },
+    {
+      code: "62323",
+      description: "Injection(s), of therapeutic substance into spinal canal"
+    }
+  ]);
   const [analytics, setAnalytics] = useState(null);
   const [loading, setLoading] = useState(true);
 
